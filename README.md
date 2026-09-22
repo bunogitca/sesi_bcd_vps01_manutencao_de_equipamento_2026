@@ -78,3 +78,6 @@
 | `id_manutencao` | INT | **PK**, **FK** | Código da manutenção executada (Manutencao.id_manutencao) |
 | `id_peca` | INT | **PK**, **FK** | Código da peça retirada do estoque (Peca.id_peca) |
 | `quantidade` | INT | NOT NULL, CHECK > 0 | Volume de peças gastas nesta ação |
+
+## Dados de Teste
+[
