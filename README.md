@@ -90,7 +90,7 @@
 
 ## Código ddl.sql
 
-```
+```js
 CREATE DATABASE IF NOT EXISTS controle_manutencao;
 USE controle_manutencao;
 
@@ -161,7 +161,7 @@ CREATE TABLE Peca_Da_Manutencao (
 
 ## Código dml.sql
 
-```
+```js
 USE controle_manutencao;
 
 INSERT INTO Equipamento (id, nome, tipo, marca, modelo, numero_serie, data_aquisicao, status, setor, valor_de_aquisicao) VALUES
