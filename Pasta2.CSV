@@ -1,4 +1,4 @@
-id,nome,tipo,marca,modelo,numero_serie,data_aquisicao,status,setor,valor_de_aquisicao,
-1,Prensa Hidráulica 50T,Mecânico,zequinha PRENSAS,PrensaBem,SERIE12345,2022-03-15,Operacional,Estamparia,45000,
-2,Torno Mecânico CNC,Usinagem;Torneiros,Torno 3000,SERIE67890,2021-08-22,Em Manutenção,Usinagem,120000,
-3,Compressor de Ar,Pneumático,SuperAr,CA Strong,SERIE11223,2023-01-10,Operacional,Utilidades,28000,
+id,nome,tipo,marca,modelo,numero_serie,data_aquisicao,status,setor,valor_de_aquisicao
+1,Prensa Hidráulica 50T,Mecânico,zequinha PRENSAS,PrensaBem,SERIE12345,2022-03-15,Operacional,Estamparia,45000
+2,Torno Mecânico CNC,Usinagem;Torneiros,Torno 3000,SERIE67890,2021-08-22,Em Manutenção,Usinagem,120000
+3,Compressor de Ar,Pneumático,SuperAr,CA Strong,SERIE11223,2023-01-10,Operacional,Utilidades,28000
