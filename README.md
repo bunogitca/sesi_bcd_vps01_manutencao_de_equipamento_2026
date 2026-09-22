@@ -80,4 +80,4 @@
 | `quantidade` | INT | NOT NULL, CHECK > 0 | Volume de peças gastas nesta ação |
 
 ## Dados de Teste
-[
+[Tecnico](<Pasta1.CSV>)
