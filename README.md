@@ -15,7 +15,7 @@
 
 ## Markdown
 
-
+### Equipamento
 | Atributo | Tipo de Dado | Restrições | Descrição |
 |---|---|---|---|
 | `id` | INT | **PK**, Auto Increment | Identificador único do equipamento |
@@ -29,7 +29,7 @@
 | `setor` | VARCHAR(50) | - | Linha de produção ou área instalada |
 | `valor_aquisicao` | DECIMAL(12,2) | - | Custo total de compra do bem |
 
-
+### Ordem Manutenção
 | Atributo | Tipo de Dado | Restrições | Descrição |
 |---|---|---|---|
 | `id_ordem` | INT | **PK**, Auto Increment | Identificador único da O.M. |
@@ -42,7 +42,7 @@
 | `status` | VARCHAR(20) | DEFAULT 'Aberta' | Status da etapa (Aberta/Em Execução/Concluída) |
 |  `prioridade` | VARCHAR(15) | - | Grau de urgência (Baixa/Média/Alta/Crítica) |
 
-
+### Técnico
 | Atributo | Tipo de Dado | Restrições | Descrição |
 |---|---|---|---|
 | `id` | INT | **PK**, Auto Increment | Registro do funcionário técnico |
@@ -51,7 +51,7 @@
 | `telefone` | VARCHAR(20) | - | Telefone de contato corporativo |
 | `email` | VARCHAR(100) | UNIQUE | Endereço eletrônico de contato |
 
-
+### Peça
 | Atributo | Tipo de Dado | Restrições | Descrição |
 |---|---|---|---|
 | `id_peca` | INT | **PK**, Auto Increment | Identificador de almoxarifado |
@@ -61,7 +61,7 @@
 | `estoque_minimo` | INT | DEFAULT 0 | Ponto de pedido mínimo de segurança |
 | `preco` | DECIMAL(10,2) | NOT NULL | Valor unitário de mercado da peça |
 
-
+### Manutenção
 | Atributo | Tipo de Dado | Restrições | Descrição |
 |---|---|---|---|
 | `id_manutencao` | INT | **PK**, Auto Increment | Identificador da intervenção física |
@@ -72,7 +72,7 @@
 | `horas_trabalhadas` | DECIMAL(5,2) | NOT NULL | Tempo computado (Homem-Hora) do técnico |
 | `observacoes` | TEXT | - | Comentários extras adicionais |
 
-
+### Peça da Manutenção
 | Atributo | Tipo de Dado | Restrições | Descrição |
 |---|---|---|---|
 | `id_manutencao` | INT | **PK**, **FK** | Código da manutenção executada (Manutencao.id_manutencao) |
