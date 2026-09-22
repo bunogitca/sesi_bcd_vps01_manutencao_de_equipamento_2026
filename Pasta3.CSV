@@ -1,4 +1,4 @@
-id_peca;nome;descricao;quantidade_estoque;estoque_minimo;preco
-1;Anel de Vedação;Anelado 50mm;150;20;15,5
-2;Contator Elétrico 24V;Componente elétrico;12;5;189,9
-3;Óleo Lubrificante WD40;Lata grande;8;2;34
+id_peca,nome,descricao,quantidade_estoque,estoque_minimo,preco
+1,Anel de VedaÃ§Ã£o,Anelado 50mm,150,20,15.5
+2,Contator ElÃ©trico 24V,Componente elÃ©trico,12,5;189.9
+3,Ã“leo Lubrificante WD40,Lata grande,8,2,34
