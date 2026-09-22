@@ -91,104 +91,105 @@
 ## Código ddl.sql
 
 ```sql
-CREATE DATABASE IF NOT EXISTS controle_manutencao;
-USE controle_manutencao;
+create database if not exists controle_manutencao; 
+use controle_manutencao;  
 
-CREATE TABLE Equipamento (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    nome VARCHAR(100) NOT NULL,
-    tipo VARCHAR(50),
-    marca VARCHAR(50),
-    modelo VARCHAR(50),
-    numero_serie VARCHAR(50) UNIQUE,
-    data_aquisicao DATE,
-    status VARCHAR(20) DEFAULT 'Operacional',
-    setor VARCHAR(50),
-    valor_de_aquisicao DECIMAL(12, 2)
-);
+create table if not exists equipamento (     
+    id int primary key auto_increment,     
+    nome varchar(100) not null,     
+    tipo varchar(50),     
+    marca varchar(50),     
+    modelo varchar(50),     
+    numero_serie varchar(50) unique,     
+    data_aquisicao date,     
+    status varchar(20) default 'operacional',     
+    setor varchar(50),     
+    valor_de_aquisicao decimal(12, 2) 
+);  
 
-CREATE TABLE Tecnico (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    nome VARCHAR(100) NOT NULL,
-    especialidade VARCHAR(50),
-    telefone VARCHAR(20),
-    email VARCHAR(100) UNIQUE
-);
+create table if not exists tecnico (     
+    id int primary key auto_increment,     
+    nome varchar(100) not null,     
+    especialidade varchar(50),     
+    telefone varchar(20),     
+    email varchar(100) unique 
+);  
 
-CREATE TABLE Peca (
-    id_peca INT PRIMARY KEY AUTO_INCREMENT,
-    nome VARCHAR(100) NOT NULL,
-    descricao TEXT,
-    quantidade_estoque INT NOT NULL DEFAULT 0,
-    estoque_minimo INT NOT NULL DEFAULT 0,
-    preco DECIMAL(10, 2) NOT NULL
-);
+create table if not exists peca (     
+    id_peca int primary key auto_increment,     
+    nome varchar(100) not null,     
+    descricao text,     
+    quantidade_estoque int not null default 0,     
+    estoque_minimo int not null default 0,     
+    preco decimal(10, 2) not null 
+);  
 
-CREATE TABLE Ordem_Manutencao (
-    id_ordem INT PRIMARY KEY AUTO_INCREMENT,
-    id_equipamento INT NOT NULL,
-    tipo VARCHAR(30) NOT NULL,
-    descricao TEXT NOT NULL,
-    data_abertura DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    data_inicio DATETIME,
-    data_fim DATETIME,
-    status VARCHAR(20) DEFAULT 'Aberta',
-    prioridade VARCHAR(15),
-    FOREIGN KEY (id_equipamento) REFERENCES Equipamento(id) ON DELETE RESTRICT
-);
+create table if not exists ordem_manutencao (     
+    id_ordem int primary key auto_increment,     
+    id_equipamento int not null,     
+    tipo varchar(30) not null,     
+    descricao text not null,     
+    data_abertura datetime not null default current_timestamp,     
+    data_inicio datetime,     
+    data_fim datetime,     
+    status varchar(20) default 'aberta',     
+    prioridade varchar(15),     
+    foreign key (id_equipamento) references equipamento(id) on delete restrict 
+);  
 
-CREATE TABLE Manutencao (
-    id_manutencao INT PRIMARY KEY AUTO_INCREMENT,
-    id_ordem INT NOT NULL,
-    id_tecnico INT NOT NULL,
-    descricao_servico TEXT NOT NULL,
-    data_execucao DATETIME NOT NULL,
-    horas_trabalhadas DECIMAL(5, 2) NOT NULL,
-    observacoes TEXT,
-    FOREIGN KEY (id_ordem) REFERENCES Ordem_Manutencao(id_ordem) ON DELETE CASCADE,
-    FOREIGN KEY (id_tecnico) REFERENCES Tecnico(id) ON DELETE RESTRICT
-);
+create table if not exists manutencao (     
+    id_manutencao int primary key auto_increment,     
+    id_ordem int not null,     
+    id_tecnico int not null,     
+    descricao_servico text not null,     
+    data_execucao datetime not null,     
+    horas_trabalhadas decimal(5, 2) not null,     
+    observacoes text,     
+    foreign key (id_ordem) references ordem_manutencao(id_ordem) on delete cascade,     
+    foreign key (id_tecnico) references tecnico(id) on delete restrict 
+);  
 
-CREATE TABLE Peca_Da_Manutencao (
-    id_manutencao INT NOT NULL,
-    id_peca INT NOT NULL,
-    quantidade INT NOT NULL CHECK (quantidade > 0),
-    PRIMARY KEY (id_manutencao, id_peca),
-    FOREIGN KEY (id_manutencao) REFERENCES Manutencao(id_manutencao) ON DELETE CASCADE,
-    FOREIGN KEY (id_peca) REFERENCES Peca(id_peca) ON DELETE RESTRICT
+create table if not exists peca_da_manutencao (     
+    id_manutencao int not null,     
+    id_peca int not null,     
+    quantidade int not null check (quantidade > 0),     
+    primary key (id_manutencao, id_peca),     
+    foreign key (id_manutencao) references manutencao(id_manutencao) on delete cascade,     
+    foreign key (id_peca) references peca(id_peca) on delete restrict 
 );
 ```
 
 ## Código dml.sql
 
 ```sql
-USE controle_manutencao;
+use controle_manutencao;
 
-INSERT INTO Equipamento (id, nome, tipo, marca, modelo, numero_serie, data_aquisicao, status, setor, valor_de_aquisicao) VALUES
-(1, 'Prensa Hidráulica 50T', 'Mecânico', 'zequinha PRENSAS', 'PrensaBem', 'SERIE12345', '2022-03-15', 'Operacional', 'Estamparia', 45000.00),
-(2, 'Torno Mecânico CNC', 'Usinagem', 'Torneiros', 'Torno 3000', 'SERIE67890', '2021-08-22', 'Em Manutenção', 'Usinagem', 120000.00),
-(3, 'Compressor de Ar', 'Pneumático', 'SuperAr', 'CA Strong', 'SERIE11223', '2023-01-10', 'Operacional', 'Utilidades', 28000.00);
+insert into equipamento (id, nome, tipo, marca, modelo, numero_serie, data_aquisicao, status, setor, valor_de_aquisicao) values
+(1, 'prensa hidráulica 50t', 'mecânico', 'zequinha prensas', 'prensabem', 'serie12345', '2022-03-15', 'operacional', 'estamparia', 45000.00),
+(2, 'torno mecânico cnc', 'usinagem', 'torneiros', 'torno 3000', 'serie67890', '2021-08-22', 'em manutenção', 'usinagem', 120000.00),
+(3, 'compressor de ar', 'pneumático', 'superar', 'ca strong', 'serie11223', '2023-01-10', 'operacional', 'utilidades', 28000.00);
 
-INSERT INTO Tecnico (id, nome, especialidade, telefone, email) VALUES
-(1, 'Carlos Silva', 'Mecânica Industrial', '199959697989', 'carlos.silva@fabrica.com'),
-(2, 'Roberto Santos', 'Eletrotécnica', '119912131415', 'roberto.santos@fabrica.com'),
-(3, 'Aline Costa', 'Automação', '119934156702', 'aline.costa@fabrica.com');
+insert into tecnico (id, nome, especialidade, telefone, email) values
+(1, 'carlos silva', 'mecânica industrial', '199959697989', 'carlos.silva@fabrica.com'),
+(2, 'roberto santos', 'eletrotécnica', '119912131415', 'roberto.santos@fabrica.com'),
+(3, 'aline costa', 'automação', '119934156702', 'aline.costa@fabrica.com');
 
-INSERT INTO Peca (id_peca, nome, descricao, quantidade_estoque, estoque_minimo, preco) VALUES
-(1, 'Anel de Vedação', 'Anelado 50mm', 150, 20, 15.50),
-(2, 'Contator Elétrico 24V', 'Componente elétrico', 12, 5, 189.90),
-(3, 'Óleo Lubrificante WD40', 'Lata grande', 8, 2, 34.00);
+insert into peca (id_peca, nome, descricao, quantidade_estoque, estoque_minimo, preco) values
+(1, 'anel de vedação', 'anelado 50mm', 150, 20, 15.50),
+(2, 'contator elétrico 24v', 'componente elétrico', 12, 5, 189.90),
+(3, 'óleo lubrificante wd40', 'lata grande', 8, 2, 34.00);
 
-INSERT INTO Ordem_Manutencao (id_ordem, id_equipamento, tipo, descricao, data_abertura, data_inicio, data_fim, status, prioridade) VALUES
-(1, 1, 'Preventiva', 'Troca periódica de fluidos e vedações', '2026-09-20', '2026-09-20', '2026-09-20', 'Concluída', 'Média'),
-(2, 2, 'Corretiva', 'Superaquecimento no motor principal do eixo X', '2026-09-21', '2026-09-21', NULL, 'Em Execução', 'Alta'),
-(3, 3, 'Preventiva', 'Inspeção de rotina de ruídos e vibrações', '2026-09-22', NULL, NULL, 'Aberta', 'Baixa');
+insert into ordem_manutencao (id_ordem, id_equipamento, tipo, descricao, data_abertura, data_inicio, data_fim, status, prioridade) values
+(1, 1, 'preventiva', 'troca periódica de fluidos e vedações', '2026-09-20', '2026-09-20', '2026-09-20', 'concluída', 'média'),
+(2, 2, 'corretiva', 'superaquecimento no motor principal do eixo x', '2026-09-21', '2026-09-21', null, 'em execução', 'alta'),
+(3, 3, 'preventiva', 'inspeção de rotina de ruídos e vibrações', '2026-09-22', null, null, 'aberta', 'baixa');
 
-INSERT INTO Manutencao (id_manutencao, id_ordem, id_tecnico, descricao_servico, data_execucao, horas_trabalhadas, observacoes) VALUES
-(1, 1, 1, 'Realizada a substituição do óleo antigo e troca dos anéis de vedação desgastados.', '2026-09-20', 2.5, 'Sistema operou sem vazamentos após testes.'),
-(2, 2, 2, 'Iniciada a medição das bobinas e verificação de curto circuito no motor.', '2026-09-21', 2.0, 'Aguardando resfriamento completo para novos testes técnicos.');
+insert into manutencao (id_manutencao, id_ordem, id_tecnico, descricao_servico, data_execucao, horas_trabalhadas, observacoes) values
+(1, 1, 1, 'realizada a substituição do óleo antigo e troca dos anéis de vedação desgastados.', '2026-09-20', 2.5, 'sistema operou sem vazamentos após testes.'),
+(2, 2, 2, 'iniciada a medição das bobinas e verificação de curto circuito no motor.', '2026-09-21', 2.0, 'aguardando resfriamento completo para novos testes técnicos.');
 
-INSERT INTO Peca_Da_Manutencao (id_manutencao, id_peca, quantidade) VALUES
+insert into peca_da_manutencao (id_manutencao, id_peca, quantidade) values
 (1, 1, 4),
 (1, 3, 1);
+
 ```
