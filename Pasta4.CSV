@@ -1,4 +1,4 @@
 id_ordem,id_equipamento,tipo,descricao,data_abertura,data_inicio,data_fim,status,prioridade
 1,1,Preventiva,Troca periódica de fluidos e vedações,19/09/2026,20/09/2026,20/09/2026,Concluída,Média
-2,2,Corretiva,Superaquecimento no motor principal do eixo X,21/09/2026,21/09/2026,21/09/2026,Em Execução,Alta
-3,3,Preventiva,Inspeção de rotina de ruídos e vibrações,22/09/2026,22/09/2026,22/09/2026,Aberta,Baixa
+2,2,Corretiva,Superaquecimento no motor principal do eixo X,21/09/2026,21/09/2026,??/09/2026,Em Execução,Alta
+3,3,Preventiva,Inspeção de rotina de ruídos e vibrações,22/09/2026,22/09/2026,??/09/2026,Aberta,Baixa
