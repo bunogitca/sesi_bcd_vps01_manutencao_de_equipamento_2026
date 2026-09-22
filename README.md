@@ -7,6 +7,8 @@
 ## Markdown
 
 
+
+
 | Atributo | Tipo de Dado | Restrições | Descrição |
 |---|---|---|---|
 | id | INT | PK, Auto Increment | Identificador único do equipamento |
@@ -19,6 +21,8 @@
 | status | VARCHAR(20) | DEFAULT 'Operacional' | Condição física atual do ativo |
 | setor | VARCHAR(50) | - | Linha de produção ou área instalada |
 | valor_aquisicao | DECIMAL(12,2) | - | Custo total de compra do bem |
+
+
 
 
 | Atributo | Tipo de Dado | Restrições | Descrição |
@@ -34,6 +38,8 @@
 | prioridade | VARCHAR(15) | - | Grau de urgência (Baixa/Média/Alta/Crítica) |
 
 
+
+
 | Atributo | Tipo de Dado | Restrições | Descrição |
 |---|---|---|---|
 | id | INT | PK, Auto Increment | Registro do funcionário técnico |
@@ -41,6 +47,8 @@
 | especialidade | VARCHAR(50) | - | Área de atuação principal (Ex: Elétrica) |
 | telefone | VARCHAR(20) | - | Telefone de contato corporativo |
 | email | VARCHAR(100) | UNIQUE | Endereço eletrônico de contato |
+
+
 
 
 | Atributo | Tipo de Dado | Restrições | Descrição |
@@ -52,6 +60,9 @@
 | estoque_minimo | INT | DEFAULT 0 | Ponto de pedido mínimo de segurança |
 | preco | DECIMAL(10,2) | NOT NULL | Valor unitário de mercado da peça |
 
+
+
+
 | Atributo | Tipo de Dado | Restrições | Descrição |
 |---|---|---|---|
 | id_manutencao | INT | PK, Auto Increment | Identificador da intervenção física |
@@ -61,6 +72,8 @@
 | data_execucao | DATETIME | NOT NULL | Dia e hora exatos em que ocorreu a ação |
 | horas_trabalhadas | DECIMAL(5,2) | NOT NULL | Tempo computado (Homem-Hora) do técnico |
 | observacoes | TEXT | - | Comentários extras adicionais |
+
+
 
 
 | Atributo | Tipo de Dado | Restrições | Descrição |
