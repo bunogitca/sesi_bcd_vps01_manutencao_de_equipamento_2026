@@ -84,5 +84,5 @@
 [Equipamento](<Pasta2.CSV>)<br>
 [Peca](<Pasta3.CSV>)<br>
 [Ordem Manutencao](<Pasta4.CSV>)<br>
-[Tecnico](<Pasta5.CSV>)<br>
-[Tecnico](<Pasta6.CSV>)<br>
+[Manutencao](<Pasta5.CSV>)<br>
+[Peca da Manutencao](<Pasta6.CSV>)<br>
