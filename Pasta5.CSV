@@ -1,3 +1,3 @@
-id_manutencao;id_ordem;id_tecnico;descricao_servico;data_execucao;horas_trabalhadas;observacoes
-1;1;1;Realizada a substituição do óleo antigo e troca dos anéis de vedação desgastados.;2026-09-20;2,5;Sistema operou sem vazamentos após testes.
-2;2;2;Iniciada a medição das bobinas e verificação de curto circuito no motor.;2026-09-21;2;Aguardando resfriamento completo para novos testes técnicos.
+id_manutencao,id_ordem,id_tecnico,descricao_servico,data_execucao,horas_trabalhadas,observacoes
+1,1,1,Realizada a substituiÃ§Ã£o do Ã³leo antigo e troca dos anÃ©is de vedaÃ§Ã£o desgastados.,2026-09-20,2.5,Sistema operou sem vazamentos apÃ³s testes.
+2,2,2,Iniciada a mediÃ§Ã£o das bobinas e verificaÃ§Ã£o de curto circuito no motor.,2026-09-21,2,Aguardando resfriamento completo para novos testes tÃ©cnicos.
