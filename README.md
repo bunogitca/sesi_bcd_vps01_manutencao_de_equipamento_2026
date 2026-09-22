@@ -4,6 +4,15 @@
 ## Um banco de dados de manutenção de equipamentos em uma fábrica, onde o objetivo é controlar os equipamentos, seu histórico de manutenção, os técnicos responsáveis, peças utilizadas e as ordens de serviço.
 
 
+
+## MER DER
+
+![Imagem do MER DER](MER_DER_conceitual.png)
+
+
+![Imagem do MER DER](MER_DER_logico.png)
+
+
 ## Markdown
 
 
