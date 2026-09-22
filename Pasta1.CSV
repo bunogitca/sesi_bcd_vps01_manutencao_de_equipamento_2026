@@ -1,4 +1,4 @@
-﻿id;nome;especialidade;telefone;email
-1;Carlos Silva;Mecânica Industrial;199959697989;carlos.silva@fabrica.com
-2;Roberto Santos;Eletrotécnica;119912131415;roberto.santos@fabrica.com
-3;Aline Costa;Automação;119934156702;aline.costa@fabrica.com
+﻿id,nome,especialidade,telefone,email
+1,Carlos Silva,Mecânica Industrial,199959697989,carlos.silva@fabrica.com
+2,Roberto Santos,Eletrotécnica,119912131415,roberto.santos@fabrica.com
+3,Aline Costa,Automação,119934156702,aline.costa@fabrica.com
